@@ -1,0 +1,14 @@
+.vagrant
+
+# Bundler
+bin/*
+.bundle/*
+
+.kitchen/
+.kitchen.local.yml
+
+# itamae
+*.erb
+.env
+.keep
+Gemfile.lock
