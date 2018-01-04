@@ -9,7 +9,7 @@ DST="/home/vuls/"
 SRC="/home/#{USER_NAME}/Templates/vuls/"
 
 template "#{DST}config.toml" do
-  user vuls
+  user "vuls"
   mode "644"
   source "#{SRC}config.toml.erb"
 end
