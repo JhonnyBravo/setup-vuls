@@ -8,7 +8,6 @@ bin/*
 .kitchen.local.yml
 
 # itamae
-*.erb
 .env
 .keep
 Gemfile.lock
