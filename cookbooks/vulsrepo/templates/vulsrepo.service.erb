@@ -1,0 +1,17 @@
+[Unit]
+Description=vulsrepo daemon
+Documentation=https://github.com/usiusi360/vulsrepo
+
+[Service]
+ExecStart = /home/vuls/go/src/github.com/usiusi360/vulsrepo/server/vulsrepo-server
+ExecRestart = /bin/kill -WINCH ${MAINPID} ; /home/vuls/go/src/github.com/usiusi360/vulsrepo/server/vulsrepo-server
+ExecStop = /bin/kill -WINCH ${MAINPID}
+Restart = no
+Type = simple
+User = vuls
+Group = vuls
+
+[Install]
+WantedBy = multi-user.target
+
+
