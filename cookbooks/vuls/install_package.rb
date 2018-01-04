@@ -18,6 +18,7 @@ end
 %w(git make gcc reboot-notifier).each do |pkg|
   package pkg do
     action :install
+    options "--force-yes"
   end
 end
 
