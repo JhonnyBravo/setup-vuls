@@ -1,13 +1,18 @@
+APT_SOURCE="deb http://httpredir.debian.org/debian jessie-backports main"
+
 directory "/var/log/vuls" do
   action :create
   owner "vuls"
   mode "700"
 end
 
-template "/etc/profile.d/goenv.sh" do
-  action :create
-  mode "644"
-  source "templates/goenv.sh"
+execute "add_apt_source" do
+  not_if "grep -a 'jessie-backports' /etc/apt/sources.list"
+  command "echo #{APT_SOURCE} >> /etc/apt/sources.list"
+end
+
+execute "apt_get_update" do
+  command "apt-get update"
 end
 
 %w(git make gcc reboot-notifier).each do |pkg|
