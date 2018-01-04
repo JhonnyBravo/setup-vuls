@@ -7,7 +7,7 @@ Dotenv.load
 
 USER_NAME=ENV["USER_NAME"]
 SRC1="/lib/systemd/system/"
-SRC2="/home/vuls/go/src/github.com/usiusi360/vulsrepo/server/scripts"
+SRC2="/home/vuls/go/src/github.com/usiusi360/vulsrepo/server/scripts/"
 DST="/home/#{USER_NAME}/Templates/vulsrepo/"
 
 directory DST do
